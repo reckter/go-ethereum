@@ -124,7 +124,9 @@ type ChainConfig struct {
 }
 
 // EthashConfig is the consensus engine configs for proof-of-work based sealing.
-type EthashConfig struct{}
+type EthashConfig struct{
+	FixedDifficulty uint64 `json:"fixedDifficulty"`
+}
 
 // String implements the stringer interface, returning the consensus engine details.
 func (c *EthashConfig) String() string {

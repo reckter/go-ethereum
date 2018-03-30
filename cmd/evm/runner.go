@@ -66,6 +66,8 @@ func readGenesis(genesisPath string) *core.Genesis {
 	if err := json.NewDecoder(file).Decode(genesis); err != nil {
 		utils.Fatalf("invalid genesis file: %v", err)
 	}
+	fmt.PrintLn(genesis.config.Ethash)
+	fmt.PrintLn(genesis.config.Ethash.FixedDifficulty)
 	return genesis
 }
 
